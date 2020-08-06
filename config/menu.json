@@ -1,0 +1,42 @@
+[
+	{
+		"title": {
+			"vi": "Web",
+			"kr": "편물",
+			"en": "Web"
+		},
+	    "class_icon": "",
+	    "role": "2",
+	    "route": "web-overview"
+	},
+	{
+		"title": {
+			"vi": "Đơn hàng",
+			"kr": "주문",
+			"en": "Order"
+		},
+	    "class_icon": "",
+	    "role": "0",
+	    "route": "web-order-overview"
+	},
+	{
+		"title": {
+			"vi": "Thanh toán",
+			"kr": "지불리스트",
+			"en": "Payment List"
+		},
+	    "class_icon": "",
+	    "role": "1",
+	    "route": "payment-list"
+	},
+	{
+		"title": {
+			"vi": "Thoát",
+			"kr": "로그 아웃",
+			"en": "Log out"
+		},
+	    "class_icon": "",
+	    "role": "3",
+	    "route": "logout"
+	}
+]
