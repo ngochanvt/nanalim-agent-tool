@@ -27,9 +27,8 @@
 						<th>ID</th>
 						<th><?=$lang[$glb_config['lang']]['website-name']?></th>
 						<th><?=$lang[$glb_config['lang']]['picture']?></th>
-                        <th><?=$lang[$glb_config['lang']]['website-username']?></th>
-                        <th><?=$lang[$glb_config['lang']]['name']?></th>
-                        <th><?=$lang[$glb_config['lang']]['phone']?></th>
+                        <th><?=$lang[$glb_config['lang']]['manager-name']?></th>
+                        <th><?=$lang[$glb_config['lang']]['telephone']?></th>
                         <th><?=$lang[$glb_config['lang']]['email']?></th>
 						<th></th>
 					</tr>
@@ -78,30 +77,28 @@ function InitializeTableWeb() {
                 "data": "logo",
                 "render": function(data, type, row, meta){
                     if(data==null || data == undefined || data=='') return '';
-                    return "<img width='100px' src = '<?=$glb_config['baseurl']?>data/sub_web/web_"+row['web_id']+"/"+data+"' />";
+                    return "<img width='100px' src = '<?=$glb_config['root_base']?>data/sub_web/web_"+row['web_id']+"/"+data+"' />";
                 }
             },
             {
                 "targets": 3,
-                "data": "username"
-            },
-            {
-                "targets": 4,
                 "data": "name"
             },
             {
-                "targets": 5,
+                "targets": 4,
                 "data": "phone"
             },
             {
-                "targets": 6,
+                "targets": 5,
                 "data": "email"
             },
             {
-                "targets": 7,
+                "targets": 6,
                 "data": "web_id",
                 render: function(data, type, row, meta){
-                    return "<a href='"+base_url+"index.php?route=web-detail&id="+data+"'><i class='fas fa-eye' style='font-size: 2em'></i></a>";
+                    var tag_link = "<a href='<?=$glb_config['root_base']?>?web-id="+row['web_id']+"' target='_blank' class='operator text-red'><i class='fas fa-external-link-alt'></i></a>";
+                    var tag_view = "<a href='"+base_url+"index.php?route=web-detail&id="+data+"' class='operator text-green'><i class='fas fa-eye'></i></a>";
+                    return tag_view+tag_link;
                 }
             },
         ]

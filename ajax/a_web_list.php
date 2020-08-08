@@ -12,9 +12,9 @@ $searchValue = $_POST['search']['value']; // Search value
 $agency_id = intval($_POST['agency_id']);
 
 $params=array();
-$arr_param = array('LOGO', $agency_id);
+$arr_param = array( $agency_id);
 
-$sql = "SELECT 	w.*, wm.name as logo FROM g5_web w LEFT JOIN g5_web_media wm ON w.web_id = wm.web_id AND wm.type = ? 
+$sql = "SELECT 	w.* FROM g5_web w 
 		WHERE w.agency_id = ? ";
 
 $sql_common = "";

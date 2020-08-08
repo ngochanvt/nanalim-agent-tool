@@ -7,22 +7,23 @@
 <div class="container tab-form">
 	<div class="row justify-content-center">
 		<div class="col-md-6">
-			<form class="row" method="POST" id="form-edit-web" onsubmit="create_order(event)">
+			<form class="row" method="POST" id="form-edit-web" onsubmit="edit_web_info(event)">
+				<input type="hidden" name="web_id" id="web_id" value="<?=$_GET['id']?>">
 				<div class="col-md-12 form-group">
 					<label><?=$cur_lang['website-name']?> <span class="text-red">*</span></label>
 				  	<input type="text" class="form-control" name="web_name" id="web_name"  value="<?=$web->web_name?>"  required>
 				</div>
 				<div class="col-md-6 form-group">
 					<label><?=$cur_lang['username']?> <span class="text-red">*</span></label>
-				  	<input type="text" class="form-control" name="username" id="username"  value="<?=$web->username?>"  required>
+				  	<input type="text" class="form-control" name="new-username" id="new-username"  value="<?=$web->username?>"  required autocomplete="off">
 				</div>
 				<div class="col-md-6 form-group">
 					<label><?=$cur_lang['password']?></label>
-				  	<input type="password" class="form-control" name="password"  value="" id="password" >
+				  	<input type="password" class="form-control" name="new-password"  value="" id="new-password" autocomplete="new-password">
 				</div>
 
 				<div class="col-md-12 form-group">
-					<label><?=$cur_lang['name']?></label>
+					<label><?=$cur_lang['manager-name']?></label>
 				  	<input type="text" class="form-control" name="name"  value="<?=$web->name?>" id="name" >
 				</div>
 
@@ -54,19 +55,19 @@
 				    
 				    <div class="col-6 form-group">
 				    	<label><?=$cur_lang['bank_name']?></label>
-				      	<input type="text" class="form-control" name="bank_name" value="<?=$web->bank_name?>">
+				      	<input type="text" class="form-control" name="bank_name" id="bank_name" value="<?=$web->bank_name?>">
 				    </div>
 				    <div class="col-6 form-group">
 				    	<label><?=$cur_lang['bank_branch']?></label>
-				      	<input type="text" class="form-control" name="bank_branch" value="<?=$web->bank_branch?>">
+				      	<input type="text" class="form-control" name="bank_branch" id="bank_branch" value="<?=$web->bank_branch?>">
 				    </div>
 				    <div class="col-6 form-group">
 				    	<label><?=$cur_lang['bank_username']?></label>
-				      	<input type="text" class="form-control" name="bank_username" value="<?=$web->bank_username?>">
+				      	<input type="text" class="form-control" name="bank_username" id="bank_username" value="<?=$web->bank_username?>">
 				    </div>
 				    <div class="col-6 form-group">
 				    	<label><?=$cur_lang['bank_number']?></label>
-				      	<input type="text" class="form-control" name="bank_number" value="<?=$web->bank_number?>">
+				      	<input type="text" class="form-control" name="bank_number" id="bank_number" value="<?=$web->bank_number?>">
 				    </div>
 				    <hr class="col-12 m-0 p-0">
 			    </div>
@@ -79,31 +80,27 @@
 	</div>
 </div>
 <script type="text/javascript">
-	function create_order(event){
+	function edit_web_info(event){
 		event.preventDefault();
 	    var params = {
-	    	'create-order': 1,
-	        'receive_name' : $("#receive_name").val(),
-	        'address' : $("#address").val(),
+	    	'update-web-info': 1,
+	    	'web_id' : $("#web_id").val(),
+	    	'web_name' : $("#web_name").val(),
+	        'name' : $("#name").val(),
+	        'username': $("#new-username").val(),
+	        'password': $("#new-password").val(),
+	        'id_number': $("#id_number").val(),
 	        'phone' : $("#phone").val(),
-	        'note': $("#note").val(),
-	        'receive_email': $("#receive_email").val()
+	        'email' : $("#email").val(),
+	        'address' : $("#address").val(),
+	        'bank_name' : $("#bank_name").val(),
+	        'bank_branch' : $("#bank_branch").val(),
+	        'bank_username' : $("#bank_username").val(),
+	        'bank_number' : $("#bank_number").val()
 	    }
-	    var count = 0;
-	    for(var i=0; i<product_num; i++){
-	    	if(deleted_product.indexOf(i)==-1){
-	    		params['product_name_'+count] = $("#product_name_"+i).val();
-	    		params['product_code_'+count] = $("#product_code_"+i).val();
-	    		params['quantity_'+count] = $("#quantity_"+i).val();
-	    		count += 1;
-	    	}
-	    }
-	    params['product_num'] = count;
-	    SERVICE.create_order(params, function(resp){
+	    SERVICE.web(params, function(resp){
 	    	bootbox.alert(resp.message, function(){
-	    		if(resp.status==200){
-	    			$("#form-create-order").trigger('reset');
-	    		}
+	    		location.reload();
 	    	});
 	    	
 	    	

@@ -124,7 +124,13 @@
 		"bank_username": "Chủ tài khoản",
 		"bank_number": "Số tài khoản",
 		"id_number": "Số Chứng minh nhân dân/Căn cước",
-		"manager-name": "Tên người quản lý"
+		"manager-name": "Tên người quản lý",
+		"success": "Thành công",
+		"error": "Đã có lỗi xảy ra",
+		"website-name": "Tên website",
+		"username": "Tên đăng nhập",
+		"password": "Mật khẩu đăng nhập",
+		"save": "Lưu"
 	},
 	"kr":{
 		"website": "위 사이트",
@@ -251,7 +257,13 @@
 		"bank_username": "계정 소유자",
 		"bank_number": "계좌 번호",
 		"id_number": "정체",
-		"manager-name": "관리자 이름"
+		"manager-name": "관리자 이름",
+		"success": "성공",
+		"error": "오류가 발생했습니다",
+		"website-name": "웹 사이트 이름",
+		"username": "사용자 이름",
+		"password": "로그인 비밀번호",
+		"save": "저장"
 	},
 	"en":{
 		"website": "Website",
@@ -377,6 +389,12 @@
 		"bank_username": "Chủ tài khoản",
 		"bank_number": "Số tài khoản",
 		"id_number": "Số Chứng minh nhân dân/Căn cước",
-		"manager-name": "Manager name"
+		"manager-name": "Manager name",
+		"success": "Success",
+		"error": "Error",
+		"website-name": "Website name",
+		"username": "Username",
+		"password": "Login password",
+		"save": "Save"
 	}
 }

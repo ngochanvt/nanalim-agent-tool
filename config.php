@@ -5,7 +5,9 @@
 	date_default_timezone_set('Asia/Seoul');
 	$glb_config=array();
 	$glb_config['baseurl'] 	= 'http://localhost/nanalim/agency/';
+	$glb_config['root_base'] 	= 'http://localhost/nanalim/';
 	// $glb_config['baseurl'] 	= 'https://nanalim-shop.com.vn/agency/';
+	// $glb_config['root_base'] 	= 'https://nanalim-shop.com.vn/';
 	$glb_config['lang']  	= isset($_SESSION['lang'])?$_SESSION['lang']:'kr';
 	$glb_config['route'] 	= isset($_GET['route'])?$_GET['route']:'home';
 	$glb_config['current_role'] = 0;
@@ -18,7 +20,7 @@
 	if(isset($_SESSION['auth'])){
 		$_SESSION['auth']->role = trim($_SESSION['auth']->role);
 		$glb_config['accept_role'] = array(0, 1, 2, 3);
-		$glb_config['accept_route'] = ['auth-login', 'home', 'web-order-overview', 'web-detail', 'order-list', 'web-order', 'payment-list', 'order-detail', 'logout', 'web-overview', 'web-detail'];
+		$glb_config['accept_route'] = ['auth-login', 'home', 'web-order-overview','order-list', 'web-order', 'payment-list', 'order-detail', 'logout', 'web-overview', 'web-detail'];
 		// switch ($_SESSION['auth']->role){
 		// 	case 'manager':
 		// 		$glb_config['accept_role'] = array(0, 1, 3, 2);
@@ -38,9 +40,6 @@
 			case 'web-order':
 				$glb_config['current_role'] = 0;
 				break;
-			case 'web-detail':
-				$glb_config['current_role'] = 0;
-				break;
 			case 'order-list':
 				$glb_config['current_role'] = 1;
 				break;
@@ -49,6 +48,10 @@
 				break;
 			case 'order-detail':
 				$glb_config['current_role'] = 1;
+				break;
+			case 'web-overview':
+			case 'web-detail':
+				$glb_config['current_role'] = 2;
 				break;
 			case 'logout':
 				$glb_config['current_role'] = 3;

@@ -129,53 +129,6 @@ function resume_zhuang(){
     $("#deleted_zhuang").attr('value', 0);
 }
 
-$(document).on('change', '#anclassid', function(){
-    $.ajax({
-        type: "POST",
-        url: "ajax_load_category.php",
-        data: {'load_nclassid':1, 'anclassid':this.value},
-        success: function(data)
-           {
-                if(data.notification.code==200){
-                    if(data.shop_nclass.length>0){
-                        var str = '<option value="">Select category</option>';
-                        for(var i=0; i<data.shop_nclass.length; i++){
-                            str+="<option value='"+data.shop_nclass[i].nclassid+"'> "+ data.shop_nclass[i].nclass +"</option>";
-                        }
-                        $("#nclassid").html(str);
-                    }
-               }
-                if(url.indexOf('product-list')!=-1){
-                    InitializeTableProduct();
-                }
-                if(url.indexOf('order-list')!=-1){
-                    InitializeTableOrder();
-                }
-           }
-     });
-})
-$(document).on('change', '#nclassid', function(){
-    $.ajax({
-        type: "POST",
-        url: "ajax_load_category.php",
-        data: {'load_xclassid':1, 'nclassid':this.value},
-        success: function(data)
-           {
-                if(data.notification.code==200){
-                    if(data.shop_xclass.length>0){
-                        var str = '<option value="">Select category</option>';
-                        for(var i=0; i<data.shop_xclass.length; i++){
-                            str+="<option value='"+data.shop_xclass[i].id+"'> "+ data.shop_xclass[i].xclass +"</option>";
-                        }
-                        $("#xclassid").html(str);
-                    }
-               }
-               if(url.indexOf('product-list')){
-                    InitializeTableProduct();
-                }
-           }
-     });
-})
 
 $(document).on('change', "#hyj", function(){
     var original_price = $('#shichangjia').val();
