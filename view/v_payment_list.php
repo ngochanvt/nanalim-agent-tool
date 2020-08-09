@@ -1,5 +1,7 @@
 <?php
+    require_once("helper/payment_report.php");
     $web_id = $_GET['web_id'];
+    $payment_report = get_agency_payment_report($_SESSION['auth']->agency_id);
 ?>
 <div id="content">
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -17,6 +19,18 @@
                 <input type="hidden" name="web_id" id="web_id" value="<?=$web_id?>">
 			</div>
 		</div>
+        <div class="row">
+            <div class="col-md-6">
+                <p class=""> Tổng đơn hàng: <strong><?=number_format($payment_report['total_order'])?></strong> </p>
+                <p class=" text-red"> Tổng đơn hàng sắp thanh toán: <strong><?=number_format($payment_report['total_requested_order'])?></strong> </p>
+                <p class=""> Tổng đơn hàng đã thanh toán: <strong><?=number_format($payment_report['total_completed_order'])?></strong> </p>
+            </div>
+            <div class="col-md-6">
+                <p class=""> Tổng tiền: <strong><?=number_format($payment_report['total_money'])?></strong> </p>
+                <p class=" text-red"> Tổng tiền sắp thanh toán: <strong><?=number_format($payment_report['total_requested_money'])?></strong> </p>
+                <p class=""> Tổng tiền đã thanh toán: <strong><?=number_format($payment_report['total_completed_money'])?></strong> </p>
+            </div>
+        </div>
 	</div>
 	<div class="container-fluid">
 		<div class="row tb-w100">

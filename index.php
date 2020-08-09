@@ -45,6 +45,9 @@
 		case 'home':
 			require_once('view/v_web_order_overview.php');
 			break;
+		case 'profile':
+			require_once('view/v_profile.php');
+			break;
 		case 'logout':
 			unset($_SESSION['auth']);
 			echo "<script>location.reload();</script>";

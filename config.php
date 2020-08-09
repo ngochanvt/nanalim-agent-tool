@@ -19,8 +19,8 @@
 <?php
 	if(isset($_SESSION['auth'])){
 		$_SESSION['auth']->role = trim($_SESSION['auth']->role);
-		$glb_config['accept_role'] = array(0, 1, 2, 3);
-		$glb_config['accept_route'] = ['auth-login', 'home', 'web-order-overview','order-list', 'web-order', 'payment-list', 'order-detail', 'logout', 'web-overview', 'web-detail'];
+		$glb_config['accept_role'] = array(0, 1, 2, 3, 4);
+		$glb_config['accept_route'] = ['auth-login', 'home', 'web-order-overview','order-list', 'web-order', 'payment-list', 'order-detail', 'logout', 'web-overview', 'web-detail', 'profile'];
 		// switch ($_SESSION['auth']->role){
 		// 	case 'manager':
 		// 		$glb_config['accept_role'] = array(0, 1, 3, 2);
@@ -35,6 +35,9 @@
 			case 'auth-login':
 				break;
 			case 'home':
+				break;
+			case 'profile':
+				$glb_config['current_role'] = 4;
 				break;
 			case 'web-list':
 			case 'web-order':

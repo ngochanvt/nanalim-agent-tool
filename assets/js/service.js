@@ -10,5 +10,17 @@ var SERVICE = {
 	                
 	           }
 	     });
+	},
+	agency: function(params, handledata){
+		$.ajax({
+	        type: "POST",
+	        url: base_url + 'ajax/a_agency.php',
+	        data: params,
+	        success: function(data)
+	           {
+	           		handledata(data);
+	                
+	           }
+	     });
 	}
 }

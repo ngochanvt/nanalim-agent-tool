@@ -31,6 +31,16 @@
 	},
 	{
 		"title": {
+			"vi": "Thông tin cá nhân",
+			"kr": "프로필",
+			"en": "Profile"
+		},
+	    "class_icon": "",
+	    "role": "4",
+	    "route": "profile"
+	},
+	{
+		"title": {
 			"vi": "Thoát",
 			"kr": "로그 아웃",
 			"en": "Log out"

@@ -1,6 +1,8 @@
 <?php
+require_once("helper/payment_report.php");
 $cur_lang = $lang[$glb_config['lang']];
 $ap_status_name = array('NULL'=>'Chưa thanh toán', 'REQUESTED'=>'Chờ thanh toán', 'COMPLETED'=>"Đã thanh toán");
+$summary = get_ap_detail($_GET['id']);
 ?>
 <div id="content">
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -19,6 +21,12 @@ $ap_status_name = array('NULL'=>'Chưa thanh toán', 'REQUESTED'=>'Chờ thanh t
 				<input type="hidden" name="ap_status" id="ap_status" value="<?=$_GET['ap_status']?>">
 			</div>
 		</div>
+        <div class="row">
+            <div class="col-md-12">
+                <p> Tổng đơn hàng: <strong><?=number_format($summary['total_order'])?></strong> </p>
+                <p> Tổng tiền hoa hồng: <strong><?=number_format($summary['total_money'])?></strong> </p>
+            </div>
+        </div>
 	</div>
 	<div class="container-fluid" style="margin-top: 30px;">
 		<div class="row tb-w100">
