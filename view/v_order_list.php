@@ -23,8 +23,8 @@ $summary = get_ap_detail($_GET['id']);
 		</div>
         <div class="row">
             <div class="col-md-12">
-                <p> Tổng đơn hàng: <strong><?=number_format($summary['total_order'])?></strong> </p>
-                <p> Tổng tiền hoa hồng: <strong><?=number_format($summary['total_money'])?></strong> </p>
+                <p> <?=$cur_lang["total-order"]?>: <strong><?=number_format($summary['total_order'])?></strong> </p>
+                <p> <?=$cur_lang['commission']?>: <strong><?=number_format($summary['total_money'])?></strong> </p>
             </div>
         </div>
 	</div>

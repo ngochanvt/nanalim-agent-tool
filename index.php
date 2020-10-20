@@ -43,7 +43,7 @@
 			require_once('view/v_web_detail.php');
 			break;
 		case 'home':
-			require_once('view/v_web_order_overview.php');
+			require_once('view/v_web_overview.php');
 			break;
 		case 'profile':
 			require_once('view/v_profile.php');

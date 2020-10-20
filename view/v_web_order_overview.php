@@ -114,31 +114,6 @@ function InitializeTableWeb() {
                     return "<a href='"+base_url+"index.php?route=web-order&id="+row.web_id+"&ap_status=requested'>"+data+"</a>";
                 }
             }
-            // {
-            //     "targets": 3,
-            //     "data": "total_money_complete_payment",
-            //     "render": function(data, type, row, meta){
-            //         if(data!=undefined && data!=null && data!='')
-            //             return "<span>"+formatNumber(data)+"</span>";
-            //         return '0';
-            //     }
-            // },{
-            //     "targets": 4,
-            //     "data": "total_money_non_payment",
-            //     "render": function(data, type, row, meta){
-            //         if(data!=undefined && data!=null && data!='')
-            //             return "<span>"+formatNumber(data)+"</span>";
-            //         return '0';
-            //     }
-            // },{
-            //     "targets": 5,
-            //     "data": "total_money_request_payment",
-            //     "render": function(data, type, row, meta){
-            //         if(data!=undefined && data!=null && data!='')
-            //             return "<span>"+formatNumber(data)+"</span>";
-            //         return '0';
-            //     }
-            // }
         ]
     });
 }

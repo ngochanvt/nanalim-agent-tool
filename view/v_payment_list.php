@@ -21,14 +21,14 @@
 		</div>
         <div class="row">
             <div class="col-md-6">
-                <p class=""> Tổng đơn hàng: <strong><?=number_format($payment_report['total_order'])?></strong> </p>
-                <p class=" text-red"> Tổng đơn hàng sắp thanh toán: <strong><?=number_format($payment_report['total_requested_order'])?></strong> </p>
-                <p class=""> Tổng đơn hàng đã thanh toán: <strong><?=number_format($payment_report['total_completed_order'])?></strong> </p>
+                <p class=""> <?=$cur_lang["total-order"]?>: <strong><?=number_format($payment_report['total_order'])?></strong> </p>
+                <p class=" text-red"> <?=$cur_lang["request-payment-order"]?>: <strong><?=number_format($payment_report['total_requested_order'])?></strong> </p>
+                <p class=""> <?=$cur_lang["complete-payment-order"]?>: <strong><?=number_format($payment_report['total_completed_order'])?></strong> </p>
             </div>
             <div class="col-md-6">
-                <p class=""> Tổng tiền: <strong><?=number_format($payment_report['total_money'])?></strong> </p>
-                <p class=" text-red"> Tổng tiền sắp thanh toán: <strong><?=number_format($payment_report['total_requested_money'])?></strong> </p>
-                <p class=""> Tổng tiền đã thanh toán: <strong><?=number_format($payment_report['total_completed_money'])?></strong> </p>
+                <p class=""> <?=$cur_lang["total-money"]?>: <strong><?=number_format($payment_report['total_money'])?></strong> </p>
+                <p class=" text-red"> <?=$cur_lang["request-payment-money"]?>: <strong><?=number_format($payment_report['total_requested_money'])?></strong> </p>
+                <p class=""> <?=$cur_lang["complete-payment-money"]?>: <strong><?=number_format($payment_report['total_completed_money'])?></strong> </p>
             </div>
         </div>
 	</div>
@@ -38,11 +38,11 @@
 				<thead class="thead-dark">
 					<tr>
                         <th>PAYMENT ID</th>
-                        <th><?=$lang[$glb_config['lang']]["total-order"]?></th>
-                        <th><?=$lang[$glb_config['lang']]["total-money"]?></th>
-                        <th><?=$lang[$glb_config['lang']]["order-date"]?></th>
-                        <th><?=$lang[$glb_config['lang']]["payment-date"]?></th>
-                        <th><?=$lang[$glb_config['lang']]["payment-status"]?></th>
+                        <th><?=$cur_lang["total-order"]?></th>
+                        <th><?=$cur_lang["total-money"]?></th>
+                        <th><?=$cur_lang["order-date"]?></th>
+                        <th><?=$cur_lang["payment-date"]?></th>
+                        <th><?=$cur_lang["payment-status"]?></th>
 					</tr>
 				</thead>
 			</table>

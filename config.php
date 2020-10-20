@@ -10,7 +10,7 @@
 	// $glb_config['root_base'] 	= 'https://nanalim-shop.com.vn/';
 	$glb_config['lang']  	= isset($_SESSION['lang'])?$_SESSION['lang']:'kr';
 	$glb_config['route'] 	= isset($_GET['route'])?$_GET['route']:'home';
-	$glb_config['current_role'] = 0;
+	$glb_config['current_role'] = 2;
 	// $lang = file_get_contents($glb_config['baseurl'].'config/language.json');
 	// var_dump($lang);
 	
@@ -41,6 +41,7 @@
 				break;
 			case 'web-list':
 			case 'web-order':
+			case 'web-order-overview':
 				$glb_config['current_role'] = 0;
 				break;
 			case 'order-list':

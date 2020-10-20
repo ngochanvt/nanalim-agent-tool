@@ -23,8 +23,8 @@ $sql = "SELECT 	w.web_id, w.web_name,
 		FROM g5_web w LEFT JOIN g5_web_order wo ON w.web_id = wo.web_id 
 					  LEFT JOIN g5_agency_payment ap ON ap.agency_id = w.agency_id 
 					  LEFT JOIN g5_web_order wo_non ON w.web_id = wo_non.web_id AND wo_non.ap_code = ?
-					  LEFT JOIN g5_web_order ap_c ON w.web_id = ap_c.web_id AND ap_c.ap_code <> ?  AND ap.status = ?
-					  LEFT JOIN g5_web_order ap_r ON w.web_id = ap_r.web_id AND ap_r.ap_code <> ?  AND ap.status = ?
+					  LEFT JOIN g5_web_order ap_c ON w.web_id = ap_c.web_id AND ap_c.ap_code <> ? AND ap.status = ?
+					  LEFT JOIN g5_web_order ap_r ON w.web_id = ap_r.web_id AND ap_r.ap_code <> ? AND ap.status = ?
 		WHERE w.status<>-1 AND w.agency_id = ?";
 
 $sql_common = "";

@@ -1,6 +1,6 @@
 <nav id="sidebar">
 	<div class="sidebar-header">
-        <h3>Nanalim Admin Tools</h3>
+        <h3>Nanalim Agency Tools</h3>
         <form method="POST" id="form-language" action="action/a_config.php">
             <div class="form-group">
                 <select class="form-control" name="language" id="language">
